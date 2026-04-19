@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K.ramya sree | Premium Video Editor & Color Grader</title>
+    <meta name="description" content="K.ramya sree, a full-time freelance video editor and color grader. Delivering high-quality, engaging video edits for content creators and YouTubers. Elevate your content with a premium dark aesthetic.">
+    <meta name="keywords" content="video editing, color grading, freelance editor, content creator, YouTuber, premium video, engaging edits, dark aesthetic, K.ramya sree">
+    <meta name="author" content="K.ramya sree">
+    <link rel="canonical" href="https://yourwebsite.com/"> <!-- Replace with actual URL -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0A0A0A;
+            --text-color: #EAEAEA;
+            --accent-gradient-start: #1a1a1a; /* Darker grey for black */
+            --accent-gradient-end: #F5F5F5; /* Lighter grey for white */
+            --card-bg: rgba(20, 20, 20, 0.4);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --glass-blur: blur(20px);
+            --glass-saturate: saturate(180%);
+            --transition-duration: 0.4s;
+            --reveal-delay: 0.1s;
+        }
+
+        /* Basic Reset & Body Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKkFgAAAADElEQVQIW2NgYGBgYFjAAAMAAQBWfV7gAAAAAElFTkSuQmCC'); /* Subtle grain texture */
+            background-repeat: repeat;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text-color);
+            font-weight: 700;
+        }
+
+        h1 { font-size: 4rem; }
+        h2 { font-size: 3rem; }
+        h3 { font-size: 2rem; }
+
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color var(--transition-duration) ease-in-out;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 8rem 0;
+            position: relative;
+            z-index: 2; /* Ensure content is above parallax */
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(90deg, var(--accent-gradient-start), var(--accent-gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Glassmorphism Card Style */
+        .glass-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: var(--glass-blur) var(--glass-saturate);
+            -webkit-backdrop-filter: var(--glass-blur) var(--glass-saturate);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all var(--transition-duration) ease;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--accent-gradient-start), var(--accent-gradient-end));
+            color: var(--bg-color); /* Text color contrast */
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--text-color);
+            color: var(--text-color);
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background: var(--text-color);
+            color: var(--bg-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Header / Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            z-index: 1000;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--text-color);
+            transition: all var(--transition-duration) ease;
+        }
+        .logo:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        .nav-links a {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            margin-left: 2.5rem;
+            font-size: 1rem;
+            color: var(--text-color); /* Ensure full legibility */
+            position: relative;
+            transition: all var(--transition-duration) ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-gradient-start), var(--accent-gradient-end));
+            transition: width var(--transition-duration) ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 8rem;
+            position: relative;
+            overflow: hidden;
+            background-image: linear-gradient(180deg, rgba(0,0,0,0.8), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1549492167-27e1f48ed2c3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Abstract dark background */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+        }
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            z-index: 1;
+        }
+
+        #hero .container {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        #hero h1 {
+            font-size: 5.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        #hero p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        /* About Section */
+        #about .container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        #about .about-content {
+            flex: 2;
+            text-align: left;
+        }
+
+        #about h2 {
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        #about p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        #about .profile-pic-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #about .profile-pic {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--card-border);
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.05);
+            transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
+        }
+        #about .profile-pic:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Services Section */
+        #services {
+            background-color: #0F0F0F;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        #services h2, #featured-work h2, #why-me h2, #process h2, #testimonials h2, #faq h2 {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Featured Work Section */
+        #featured-work .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .work-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
+        }
+        .work-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .work-item a {
+            display: block;
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #222; /* Placeholder background */
+        }
+        .work-item a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+            z-index: 1;
+        }
+        .work-item a::after {
+            content: 'Play Video';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity var(--transition-duration) ease;
+            z-index: 2;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .work-item:hover a::after {
+            opacity: 1;
+        }
+        .work-item a iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            z-index: 0;
+        }
+        .work-item .work-title {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            right: 1rem;
+            z-index: 2;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        /* Why Work With Me Section */
+        #why-me {
+            background-image: linear-gradient(180deg, rgba(0,0,0,0.8), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Creative, high-tech background */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+            padding: 10rem 0;
+            position: relative;
+        }
+        #why-me::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            z-index: 1;
+        }
+        #why-me .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        #why-me h2 {
+            color: var(--text-color);
+            margin-bottom: 2.5rem;
+        }
+        .why-me-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .why-me-item {
+            padding: 2.5rem;
+            text-align: center;
+            color: var(--text-color);
+        }
+        .why-me-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .why-me-item p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* Process Section */
+        #process .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+        .process-step {
+            position: relative;
+            padding: 2.5rem;
+            text-align: center;
+        }
+        .process-step .icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            line-height: 1;
+            background: linear-gradient(90deg, var(--accent-gradient-start), var(--accent-gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .process-step h3 {
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+        }
+        .process-step p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+        }
+        .process-step::after {
+            content: '→';
+            position: absolute;
+            right: -2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.2);
+            z-index: -1;
+            display: none;
+        }
+        .process-steps .process-step:last-child::after {
+            display: none;
+        }
+        @media (min-width: 768px) {
+            .process-step::after {
+                display: block;
+            }
+            .process-steps {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .process-step {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+
+        /* Testimonials Section */
+        #testimonials {
+            background-color: #0F0F0F;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        .testimonial-card {
+            text-align: center;
+        }
+        .testimonial-card p {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .testimonial-card .author {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        /* FAQ Section */
+        #faq .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 1.5rem;
+        }
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            padding: 1rem 0;
+            transition: color var(--transition-duration) ease;
+        }
+        .faq-question:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .faq-question .icon {
+            font-size: 1.5rem;
+            transition: transform var(--transition-duration) ease;
+        }
+        .faq-question.active .icon {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-duration) ease-out;
+            padding: 0 1rem;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .faq-answer p {
+            padding-top: 0.5rem;
+            padding-bottom: 1rem;
+        }
+        .faq-answer.open {
+            max-height: 200px; /* Adjust as needed */
+            transition: max-height var(--transition-duration) ease-in;
+        }
+
+        /* CTA Section */
+        #cta {
+            text-align: center;
+            padding: 6rem 0;
+            background-color: var(--bg-color);
+        }
+        #cta h2 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+        }
+        #cta p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            background-color: #0A0A0A;
+        }
+        .footer p {
+            margin-bottom: 0.5rem;
+        }
+        .footer a {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .footer a:hover {
+            color: var(--text-color);
+        }
+
+        /* Scroll-Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Staggered reveal for cards */
+        .reveal.active.stagger-1 { transition-delay: calc(var(--reveal-delay) * 1); }
+        .reveal.active.stagger-2 { transition-delay: calc(var(--reveal-delay) * 2); }
+        .reveal.active.stagger-3 { transition-delay: calc(var(--reveal-delay) * 3); }
+        .reveal.active.stagger-4 { transition-delay: calc(var(--reveal-delay) * 4); }
+        .reveal.active.stagger-5 { transition-delay: calc(var(--reveal-delay) * 5); }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 { font-size: 4rem; }
+            h2 { font-size: 2.5rem; }
+            h3 { font-size: 1.8rem; }
+            #hero h1 { font-size: 4.5rem; }
+            #hero p { font-size: 1.3rem; }
+            .header .container { flex-direction: column; }
+            .nav-links { margin-top: 1rem; }
+            .nav-links a { margin: 0 1rem; }
+            #about .container { flex-direction: column; text-align: center; }
+            #about .profile-pic-wrapper { margin-top: 2rem; }
+            #about h2 { text-align: center; }
+            .hero-buttons { flex-direction: column; gap: 1rem; }
+            .btn { width: 100%; margin: 0; }
+            .btn-secondary { margin-left: 0; }
+            .process-step::after { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2rem; }
+            #hero h1 { font-size: 3.5rem; }
+            #hero p { font-size: 1.1rem; }
+            section { padding: 6rem 0; }
+            .header { padding: 0.8rem 0; }
+            .logo { font-size: 1.5rem; }
+            .nav-links { display: flex; flex-wrap: wrap; justify-content: center; }
+            .nav-links a { margin: 0.5rem 0.8rem; font-size: 0.9rem; }
+            .services-grid, .work-grid, .why-me-grid, .process-steps, .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq-question { font-size: 1.1rem; }
+            #cta h2 { font-size: 2.5rem; }
+            #cta p { font-size: 1.1rem; }
+        }
+        @media (max-width: 480px) {
+            h1 { font-size: 2.5rem; }
+            #hero h1 { font-size: 2.8rem; }
+            .container { padding: 0 1rem; }
+            .profile-pic { width: 250px; height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#hero" class="logo">K.ramya sree</a>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#featured-work">Work</a>
+                <a href="#why-me">Why Me</a>
+                <a href="#process">Process</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#faq">FAQ</a>
+                <a href="#cta">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <h1 class="reveal">
+                Elevate Your Story with <span class="gradient-text">Premium Video Edits.</span>
+            </h1>
+            <p class="reveal" style="transition-delay: 0.2s;">
+                Full-time freelance video editor and color grader delivering high-quality, engaging visual experiences for content creators and YouTubers.
+            </p>
+            <div class="hero-buttons reveal" style="transition-delay: 0.4s;">
+                <a href="#cta" class="btn btn-primary">Message me</a>
+                <a href="#featured-work" class="btn btn-secondary">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+        <div class="about-content reveal">
+            <h2 class="gradient-text">About Me</h2>
+            <p>
+                Hello! I'm K.ramya sree, a dedicated full-time freelance video editor and color grader passionate about transforming raw footage into captivating visual narratives. With a keen eye for detail and a commitment to cinematic quality, I help content creators, YouTubers, and businesses bring their visions to life.
+            </p>
+            <p>
+                My expertise lies in crafting engaging edits, ensuring smooth transitions, and applying sophisticated color grades that enhance mood and impact. I specialize in a dark & premium aesthetic, delivering results that not only look professional but also deeply resonate with your audience. Let's create something extraordinary together.
+            </p>
+            <a href="#cta" class="btn btn-primary">Let's Connect</a>
+        </div>
+        <div class="profile-pic-wrapper reveal" style="transition-delay: 0.2s;">
+            <img src="https://i.postimg.cc/FKx1SmDT/1000253476.jpg" alt="K.ramya sree Profile Picture" class="profile-pic">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="gradient-text reveal">My Expertise</h2>
+            <div class="services-grid">
+                <div class="glass-card service-card reveal stagger-1">
+                    <h3>Video Editing</h3>
+                    <p>Comprehensive video editing from raw footage to final output. Includes cutting, sequencing, pacing, sound design, motion graphics, and more to create a compelling story.</p>
+                </div>
+                <div class="glass-card service-card reveal stagger-2">
+                    <h3>Color Grading</h3>
+                    <p>Advanced color correction and grading to achieve a consistent, cinematic, and emotionally resonant look. Specializing in dark and premium aesthetics for maximum impact.</p>
+                </div>
+                <div class="glass-card service-card reveal stagger-3">
+                    <h3>Content Enhancement</h3>
+                    <p>Optimizing videos for specific platforms (YouTube, social media) including aspect ratios, captions, intro/outro creation, and audience engagement elements.</p>
+                </div>
+                <div class="glass-card service-card reveal stagger-4">
+                    <h3>Creative Consulting</h3>
+                    <p>Guiding clients on visual storytelling, identifying key moments, and suggesting creative approaches to make their content stand out and captivate viewers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Work Section -->
+    <section id="featured-work">
+        <div class="container">
+            <h2 class="gradient-text reveal">Featured Work</h2>
+            <div class="work-grid">
+                <!-- Replace with actual embedded videos if possible, or link out -->
+                <div class="work-item reveal stagger-1">
+                    <a href="https://drive.google.com/drive/folders/13RraqbgYyG3gPwrgcuPOSF-Wc_VkTxlV?usp=sharing" target="_blank" rel="noopener noreferrer">
+                        <!-- Example: You might put an image thumbnail here instead of an iframe to save resources -->
+                        <img src="https://via.placeholder.com/600x338/1A1A1A/FFFFFF?text=Project+1+Thumbnail" alt="Video Project 1 Thumbnail" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                        <span class="work-title">Portfolio Reel & Projects (Click to View)</span>
+                    </a>
+                </div>
+                <!-- Add more work items as needed, linking to specific videos within the drive folder or specific project pages -->
+                <div class="work-item reveal stagger-2">
+                    <a href="https://drive.google.com/drive/folders/13RraqbgYyG3gPwrgcuPOSF-Wc_VkTxlV?usp=sharing" target="_blank" rel="noopener noreferrer">
+                        <img src="https://via.placeholder.com/600x338/1A1A1A/FFFFFF?text=Project+2+Thumbnail" alt="Video Project 2 Thumbnail" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                        <span class="work-title">Highlight Reel Example</span>
+                    </a>
+                </div>
+                <div class="work-item reveal stagger-3">
+                    <a href="https://drive.google.com/drive/folders/13RraqbgYyG3gPwrgcuPOSF-Wc_VkTxlV?usp=sharing" target="_blank" rel="noopener noreferrer">
+                        <img src="https://via.placeholder.com/600x338/1A1A1A/FFFFFF?text=Project+3+Thumbnail" alt="Video Project 3 Thumbnail" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                        <span class="work-title">Client Showcase</span>
+                    </a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;" class="reveal">
+                <a href="https://drive.google.com/drive/folders/13RraqbgYyG3gPwrgcuPOSF-Wc_VkTxlV?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Explore All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Work With Me Section -->
+    <section id="why-me">
+        <div class="container">
+            <h2 class="gradient-text reveal">Why Collaborate With Me?</h2>
+            <div class="why-me-grid">
+                <div class="glass-card why-me-item reveal stagger-1">
+                    <h3>Premium Quality</h3>
+                    <p>I deliver cinematic, high-end video edits and color grades that make your content look and feel professional, commanding attention and respect.</p>
+                </div>
+                <div class="glass-card why-me-item reveal stagger-2">
+                    <h3>Creative Vision</h3>
+                    <p>Beyond technical skills, I bring a strong creative vision, suggesting innovative ways to tell your story and captivate your audience.</p>
+                </div>
+                <div class="glass-card why-me-item reveal stagger-3">
+                    <h3>Reliable & Efficient</h3>
+                    <p>As a full-time freelancer, I am dedicated to your project, ensuring timely delivery and clear communication every step of the way.</p>
+                </div>
+                <div class="glass-card why-me-item reveal stagger-4">
+                    <h3>Tailored Approach</h3>
+                    <p>Every project is unique. I work closely with you to understand your specific needs and goals, ensuring the final product perfectly aligns with your brand.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process">
+        <div class="container">
+            <h2 class="gradient-text reveal">My Workflow</h2>
+            <div class="process-steps">
+                <div class="glass-card process-step reveal stagger-1">
+                    <div class="icon">01</div>
+                    <h3>Discovery & Planning</h3>
+                    <p>We discuss your vision, goals, and content. I understand your brand, target audience, and project requirements.</p>
+                </div>
+                <div class="glass-card process-step reveal stagger-2">
+                    <div class="icon">02</div>
+                    <h3>Editing & Assembly</h3>
+                    <p>I meticulously edit your footage, craft a compelling narrative, apply sound design, and integrate any necessary motion graphics.</p>
+                </div>
+                <div class="glass-card process-step reveal stagger-3">
+                    <div class="icon">03</div>
+                    <h3>Color Grading & Refinement</h3>
+                    <p>I apply advanced color grading techniques, bringing out the desired mood and aesthetic, followed by detailed refinements based on your feedback.</p>
+                </div>
+                <div class="glass-card process-step reveal stagger-4">
+                    <div class="icon">04</div>
+                    <h3>Final Delivery</h3>
+                    <p>After your approval, I deliver the high-quality final video in your preferred format, ready to captivate your audience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="gradient-text reveal">What Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="glass-card testimonial-card reveal">
+                    <p>"Amazing video editing! The quality, colors, and transitions were perfect. Highly recommended!"</p>
+                    <div class="author">- Satisfied Client</div>
+                </div>
+                <!-- Add more testimonials if available, or duplicate for design -->
+                <div class="glass-card testimonial-card reveal stagger-1">
+                    <p>"K.ramya sree truly understands modern aesthetics. My YouTube videos have never looked better. The dark, premium feel is exactly what I wanted!"</p>
+                    <div class="author">- Content Creator X</div>
+                </div>
+                <div class="glass-card testimonial-card reveal stagger-2">
+                    <p>"Professional, responsive, and delivers exceptional results. The color grading brought a whole new dimension to my project. A pleasure to work with!"</p>
+                    <div class="author">- Business Owner Y</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <h2 class="gradient-text reveal">Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="glass-card faq-item reveal stagger-1">
+                    <div class="faq-question">
+                        <span>What's your typical turnaround time?</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Turnaround time varies depending on the project's complexity and length. For standard projects, it's typically 3-7 business days. We'll discuss a precise timeline during our initial consultation.</p>
+                    </div>
+                </div>
+                <div class="glass-card faq-item reveal stagger-2">
+                    <div class="faq-question">
+                        <span>What kind of footage do you work with?</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>I work with various formats and resolutions, from DSLR/mirrorless footage to cinematic raw files. As long as the footage quality is decent, I can make it shine.</p>
+                    </div>
+                </div>
+                <div class="glass-card faq-item reveal stagger-3">
+                    <div class="faq-question">
+                        <span>How many revisions are included?</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>My packages typically include 2-3 rounds of revisions to ensure you're completely satisfied with the final product. Additional revisions can be arranged if needed.</p>
+                    </div>
+                </div>
+                <div class="glass-card faq-item reveal stagger-4">
+                    <div class="faq-question">
+                        <span>Do you offer custom packages?</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! Every project is unique. Contact me with your specific needs, and I'll create a tailored package and quote that fits your requirements and budget.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="cta">
+        <div class="container">
+            <h2 class="gradient-text reveal">Ready to Elevate Your Content?</h2>
+            <p class="reveal" style="transition-delay: 0.2s;">
+                Let's discuss how premium video editing and color grading can transform your vision into an unforgettable visual experience.
+            </p>
+            <a href="mailto:k.d.u.ramyasree@gmail.com" class="btn btn-primary reveal" style="transition-delay: 0.4s;">Message me</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 K.ramya sree. All rights reserved.</p>
+            <p>Designed with a Dark & Premium Aesthetic.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll Reveal
+        function revealElements() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 150; // Adjust for when element becomes visible
+
+                if (elementTop < windowHeight - elementVisible) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active'); // Optionally remove on scroll back up
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealElements);
+        window.addEventListener('load', revealElements); // Run on load in case elements are already in view
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('.icon');
+
+                // Close other open FAQs
+                document.querySelectorAll('.faq-answer.open').forEach(openAnswer => {
+                    if (openAnswer !== answer) {
+                        openAnswer.classList.remove('open');
+                        openAnswer.style.maxHeight = 0;
+                        openAnswer.previousElementSibling.classList.remove('active');
+                        openAnswer.previousElementSibling.querySelector('.icon').style.transform = 'rotate(0deg)';
+                    }
+                });
+
+                // Toggle current FAQ
+                if (answer.classList.contains('open')) {
+                    answer.classList.remove('open');
+                    answer.style.maxHeight = 0;
+                    question.classList.remove('active');
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    answer.classList.add('open');
+                    answer.style.maxHeight = answer.scrollHeight + 'px'; // Set max-height to scrollHeight
+                    question.classList.add('active');
+                    icon.style.transform = 'rotate(45deg)';
+                }
+            });
+        });
+
+        // Sticky Header (optional, but good for fixed nav)
+        const header = document.querySelector('.header');
+        const heroSection = document.getElementById('hero');
+        const heroHeight = heroSection.offsetHeight;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > heroHeight - header.offsetHeight) { // Make header active after scrolling past hero
+                header.style.backgroundColor = 'rgba(10, 10, 10, 0.9)';
+            } else {
+                header.style.backgroundColor = 'rgba(10, 10, 10, 0.6)';
+            }
+        });
+
+    </script>
+</body>
+</html>
