@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rraj Singhh Sakshamm - Premium Video Editing & Color Grading Freelancer</title>
+    <meta name="description" content="Rraj Singhh Sakshamm - Full-time freelancer specializing in high-quality video editing and color grading for content creators and YouTubers. Elevate your visual storytelling with premium, engaging video edits.">
+    <meta name="keywords" content="video editing, color grading, freelancer, Rraj Singhh Sakshamm, content creator, YouTube editor, post-production, premium video, professional video editor, dark aesthetic, high quality edits">
+    <meta name="author" content="Rraj Singhh Sakshamm">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- AOS Library for fade-up reveals -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --neon-red: #FF3366; /* Bright Neon Red */
+            --dark-bg: #0A0A0A;
+            --darker-bg: #000000;
+            --text-light: #F0F0F0;
+            --text-muted: #B0B0B0;
+            --glass-bg: rgba(0, 0, 0, 0.2);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --gradient-accent: linear-gradient(90deg, var(--neon-red) 0%, #FF6699 100%);
+            --font-outfit: 'Outfit', sans-serif;
+            --font-space-grotesk: 'Space Grotesk', sans-serif;
+            --transition-speed: 0.3s ease-in-out;
+        }
+
+        /* Base Reset & Body Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-outfit);
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll from parallax/animations */
+            position: relative;
+        }
+
+        /* Grain Texture Overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYVNySaKAAAAHXRSTlMA//////////8A/wAAAAAAAAAA/wD//////////0FjHw4AAABMSURBVDiNndFCFgAwDAPBBf8/6mYnJ0s2x8l2z9TszrTszrTszrTszrTszrTszrTszrTszrTszrTszrTszrTszrTszrTsziqgB5m/v/8hAAAAAElFTkSuQmCC'); /* Small, subtle noise pattern */
+            background-size: 50px; /* Adjust size for desired grain intensity */
+            opacity: 0.03; /* Very subtle */
+            filter: grayscale(100%);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-space-grotesk);
+            font-weight: 700;
+            margin-bottom: 0.8em;
+            letter-spacing: -0.03em;
+        }
+
+        h1 { font-size: 3.5em; }
+        h2 { font-size: 2.5em; }
+        h3 { font-size: 1.8em; }
+        p {
+            margin-bottom: 1em;
+            font-size: 1.1em;
+            color: var(--text-muted);
+        }
+
+        a {
+            color: var(--neon-red);
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+
+        a:hover {
+            color: #FF6699;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            border-radius: 8px;
+            font-family: var(--font-space-grotesk);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all var(--transition-speed);
+            cursor: pointer;
+            border: none;
+            font-size: 1em;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--gradient-accent);
+            color: var(--darker-bg);
+            box-shadow: 0 0 20px rgba(255, 51, 102, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(90deg, #FF6699 0%, var(--neon-red) 100%);
+            box-shadow: 0 0 30px rgba(255, 51, 102, 0.6);
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--neon-red);
+            border: 2px solid var(--neon-red);
+        }
+
+        .btn-secondary:hover {
+            background: var(--neon-red);
+            color: var(--darker-bg);
+            transform: translateY(-3px);
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .gradient-text {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        /* Header / Navigation */
+        .header {
+            background-color: var(--darker-bg);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-space-grotesk);
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--text-light); /* Ensure legible */
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 40px;
+        }
+
+        .nav-links a {
+            color: #F0F0F0; /* CRITICAL UX RULE 2: Visible & legible */
+            font-family: var(--font-outfit);
+            font-weight: 500;
+            font-size: 1.1em;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-accent);
+            transition: width var(--transition-speed);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1549490348-d3680e920d3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            background-attachment: fixed; /* Parallax effect */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 100vh;
+            position: relative;
+            padding: 100px 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+            backdrop-filter: blur(2px);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 4.5em;
+            margin-bottom: 0.2em;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 10px 40px rgba(255, 51, 102, 0.2);
+            border: 2px solid var(--neon-red);
+            transition: transform var(--transition-speed);
+        }
+        .about-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .about-text {
+            flex: 2;
+            min-width: 300px;
+        }
+        .about-text h2 {
+            margin-bottom: 0.5em;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .service-card h3 {
+            color: var(--neon-red);
+            margin-bottom: 15px;
+            font-size: 1.6em;
+        }
+
+        .service-card p {
+            font-size: 1em;
+            color: var(--text-muted);
+        }
+
+        /* Featured Work Section */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .work-item a {
+            display: block;
+            text-align: center;
+            padding: 40px 25px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-light);
+            font-family: var(--font-space-grotesk);
+            font-weight: 600;
+            font-size: 1.4em;
+            transition: all var(--transition-speed);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .work-item a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-accent);
+            opacity: 0;
+            transition: opacity var(--transition-speed);
+            z-index: -1;
+        }
+        .work-item a:hover::before {
+            opacity: 1;
+        }
+        .work-item a:hover {
+            color: var(--darker-bg);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(255, 51, 102, 0.3);
+        }
+
+        /* Why Work With Me Section */
+        .why-work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        .why-item {
+            text-align: center;
+            padding: 30px;
+            position: relative;
+            border-radius: 12px;
+        }
+        .why-item h3 {
+            color: var(--neon-red);
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        .why-item p {
+            color: var(--text-muted);
+            font-size: 1em;
+        }
+        .why-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            z-index: -1;
+        }
+
+        /* Process Section */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            right: 5%;
+            height: 2px;
+            background: var(--gradient-accent);
+            z-index: -1;
+            transform: translateY(-50%);
+            display: none; /* Hidden on small screens */
+        }
+        @media (min-width: 768px) {
+            .process-steps::before {
+                display: block;
+            }
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        .step-number {
+            display: inline-flex;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+            font-family: var(--font-space-grotesk);
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--darker-bg);
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(255, 51, 102, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-step h3 {
+            color: var(--text-light);
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+
+        .process-step p {
+            font-size: 0.95em;
+            color: var(--text-muted);
+        }
+
+
+        /* Testimonials Section */
+        .testimonial-card {
+            max-width: 800px;
+            margin: 50px auto 0;
+            text-align: center;
+            padding: 50px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .testimonial-card p {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        .testimonial-card .author {
+            font-weight: 600;
+            color: var(--neon-red);
+            font-family: var(--font-space-grotesk);
+            font-size: 1.2em;
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .faq-item {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 25px;
+            cursor: pointer;
+            font-family: var(--font-space-grotesk);
+            font-size: 1.2em;
+            font-weight: 500;
+            color: var(--text-light);
+            transition: background-color var(--transition-speed);
+        }
+
+        .faq-question:hover {
+            background-color: rgba(255, 51, 102, 0.1);
+        }
+
+        .faq-question span {
+            font-size: 1.5em;
+            transition: transform var(--transition-speed);
+        }
+
+        .faq-item.active .faq-question span {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+            padding: 0 25px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px; /* Adjust based on expected answer length */
+            padding: 15px 25px 25px;
+        }
+
+        .faq-answer p {
+            color: var(--text-muted);
+            font-size: 1em;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: var(--darker-bg);
+            padding: 100px 0;
+            text-align: center;
+            background-image: url('https://images.unsplash.com/photo-1549490348-d3680e920d3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); /* Same as hero or similar production vibe */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85); /* Darker overlay */
+            backdrop-filter: blur(1px);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .cta p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--darker-bg);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9em;
+            color: var(--text-muted);
+        }
+        .footer p {
+            margin: 0;
+            color: var(--text-muted);
+        }
+        .footer a {
+            color: var(--neon-red);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            h1 { font-size: 3.5em; }
+            h2 { font-size: 2em; }
+            .hero p { font-size: 1.3em; }
+            .about-content { flex-direction: column; text-align: center; }
+            .about-image { order: -1; margin-bottom: 40px;}
+            .about-image img { max-width: 80%; }
+            .navbar { flex-direction: column; }
+            .nav-links { margin-top: 20px; flex-wrap: wrap; justify-content: center;}
+            .nav-links li { margin: 0 15px 10px; }
+            .hero-buttons { flex-direction: column; gap: 15px; }
+            .btn { width: 80%; max-width: 300px; }
+            .process-steps::before {
+                left: 10%;
+                right: 10%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-padding { padding: 80px 0; }
+            h1 { font-size: 2.8em; }
+            h2 { font-size: 1.8em; }
+            h3 { font-size: 1.5em; }
+            p { font-size: 1em; }
+            .logo { font-size: 1.5em; }
+            .nav-links { display: none; } /* Hide nav on very small screens, could add hamburger */
+            .hero { min-height: 80vh; padding: 80px 0; }
+            .hero h1 { font-size: 3em; }
+            .hero p { font-size: 1.1em; }
+            .testimonial-card { padding: 30px; }
+            .testimonial-card p { font-size: 1.2em; }
+            .process-steps { grid-template-columns: 1fr; }
+            .process-steps::before { display: none; } /* Hide line on mobile */
+            .process-step { border-left: 2px solid var(--gradient-accent); padding-left: 30px; text-align: left; }
+            .step-number { position: absolute; left: -30px; top: 15px; }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2.2em; }
+            h2 { font-size: 1.6em; }
+            .hero p { font-size: 1em; }
+            .btn { padding: 12px 20px; font-size: 0.9em; }
+            .about-image img { max-width: 90%; }
+        }
+
+        /* AOS Fallback (CRITICAL UX RULE 4) */
+        /* If JS fails, elements without .aos-animate will have opacity: 1 */
+        [data-aos] {
+            opacity: 1 !important; /* Default visible if AOS not loaded or failed */
+            transform: none !important; /* No default transform */
+            transition: none !important; /* No default transition */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">Rraj Singhh Sakshamm</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#featured-work">Work</a></li>
+                    <li><a href="#why-me">Why Me</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container hero-content" data-aos="fade-up" data-aos-duration="1000">
+                <h1>Elevate Your Vision with <span class="gradient-text">Stunning Visuals</span></h1>
+                <p>Hi, I'm Rraj Singhh Sakshamm, a full-time freelancer specializing in high-quality video editing and color grading. I help content creators and YouTubers craft engaging, premium video experiences.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Let's Create Together</a>
+                    <a href="#about" class="btn btn-secondary">Learn More About Me</a>
+                    <a href="#featured-work" class="btn btn-secondary">View My Work</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-padding">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-image" data-aos="fade-right" data-aos-duration="1000">
+                        <img src="https://i.postimg.cc/PrmLHm1G/Whats-App-Image-2026-04-18-at-10-36-12-PM.jpg" alt="Rraj Singhh Sakshamm Profile Picture">
+                    </div>
+                    <div class="about-text" data-aos="fade-left" data-aos-duration="1000">
+                        <h2 class="gradient-text">About Rraj Singhh Sakshamm</h2>
+                        <p>With a passion for visual storytelling and a keen eye for detail, I bring cinematic quality to every project. As a full-time freelancer, I am dedicated to transforming raw footage into captivating narratives that resonate with your audience.</p>
+                        <p>My expertise in video editing ensures smooth transitions, dynamic pacing, and a polished final product. Coupled with advanced color grading techniques, I enhance mood, correct inconsistencies, and bring out the true beauty of your visuals, making your content stand out in a crowded digital landscape.</p>
+                        <p>I thrive on collaboration and am committed to understanding your unique vision to deliver results that exceed expectations. Let's make your content unforgettable.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section-padding text-center">
+            <div class="container" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="gradient-text">My Services</h2>
+                <p>Crafting immersive visual experiences tailored to your needs.</p>
+                <div class="services-grid">
+                    <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="100">
+                        <h3>Premium Video Editing</h3>
+                        <p>From seamless cuts to engaging storytelling, I meticulously edit your footage to create a compelling and professional video that captures your audience's attention.</p>
+                    </div>
+                    <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="200">
+                        <h3>Advanced Color Grading</h3>
+                        <p>Elevate the mood and visual appeal of your videos with expert color correction and grading, ensuring a consistent, vibrant, and cinematic look across all your content.</p>
+                    </div>
+                    <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="300">
+                        <h3>Visual Storytelling & Pacing</h3>
+                        <p>Beyond technical edits, I focus on the narrative flow and optimal pacing to ensure your message is clear, impactful, and keeps viewers hooked from start to finish.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Work Section -->
+        <section id="featured-work" class="section-padding text-center">
+            <div class="container" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="gradient-text">Featured Work</h2>
+                <p>Explore a selection of my recent projects and see the quality I deliver.</p>
+                <div class="work-grid">
+                    <div class="work-item" data-aos="fade-up" data-aos-delay="100">
+                        <a href="https://drive.google.com/file/d/1321MVWl3c0jIOpfEm1uxKxLGF186hf2A/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                            Project Showcase 1
+                        </a>
+                    </div>
+                    <div class="work-item" data-aos="fade-up" data-aos-delay="200">
+                        <a href="https://drive.google.com/file/d/14N0m37npvg5ZKoVgLlda-cKneqLmftTR/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                            Cinematic Edit 2
+                        </a>
+                    </div>
+                    <div class="work-item" data-aos="fade-up" data-aos-delay="300">
+                        <a href="https://drive.google.com/file/d/1jKk45y4mz1EgfflQgizanpVdfVlgz6wH/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                            Color Graded Reel 3
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Work With Me Section -->
+        <section id="why-me" class="section-padding text-center">
+            <div class="container" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="gradient-text">Why Choose Rraj Singhh Sakshamm?</h2>
+                <p>More than just an editor, I am your partner in visual excellence.</p>
+                <div class="why-work-grid">
+                    <div class="why-item" data-aos="fade-up" data-aos-delay="100">
+                        <h3>Uncompromising Quality</h3>
+                        <p>I am committed to delivering pixel-perfect edits and stunning color grades that meet the highest industry standards.</p>
+                    </div>
+                    <div class="why-item" data-aos="fade-up" data-aos-delay="200">
+                        <h3>Creative Vision</h3>
+                        <p>I blend technical expertise with artistic flair to bring fresh, innovative ideas that make your content truly unique.</p>
+                    </div>
+                    <div class="why-item" data-aos="fade-up" data-aos-delay="300">
+                        <h3>Reliable & Punctual</h3>
+                        <p>Your deadlines are my priority. Expect timely delivery and clear communication throughout our collaboration.</p>
+                    </div>
+                    <div class="why-item" data-aos="fade-up" data-aos-delay="400">
+                        <h3>Tailored Solutions</h3>
+                        <p>Every project is unique. I offer customized editing solutions that align perfectly with your brand and objectives.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="section-padding text-center">
+            <div class="container" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="gradient-text">My Workflow Process</h2>
+                <p>A streamlined approach to bring your vision to life, step by step.</p>
+                <div class="process-steps">
+                    <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+                        <div class="step-number">1</div>
+                        <h3>Discovery & Briefing</h3>
+                        <p>We discuss your vision, goals, target audience, and project specifics to ensure a clear understanding.</p>
+                    </div>
+                    <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+                        <div class="step-number">2</div>
+                        <h3>Editing & Crafting</h3>
+                        <p>I dive into the raw footage, applying my editing and color grading expertise to build the initial cut.</p>
+                    </div>
+                    <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+                        <div class="step-number">3</div>
+                        <h3>Review & Feedback</h3>
+                        <p>You receive the first draft for review and provide feedback for any necessary adjustments.</p>
+                    </div>
+                    <div class="process-step" data-aos="fade-up" data-aos-delay="400">
+                        <div class="step-number">4</div>
+                        <h3>Final Polish & Delivery</h3>
+                        <p>After incorporating feedback, I deliver the final high-quality video in your preferred format.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section-padding">
+            <div class="container" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="gradient-text text-center">What Clients Say</h2>
+                <div class="testimonial-card">
+                    <p>"Amazing video editing! The quality, colors, and transitions were perfect. Highly recommended!"</p>
+                    <div class="author">- Satisfied Client</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section-padding">
+            <div class="container" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="gradient-text text-center">Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="faq-question">
+                            <h3>What types of videos do you specialize in?</h3>
+                            <span>+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>I specialize in a wide range of content, including YouTube videos, vlogs, short films, promotional content, corporate videos, and social media clips. My focus is on creating high-quality, engaging visual stories for content creators and brands.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="faq-question">
+                            <h3>What's your typical turnaround time?</h3>
+                            <span>+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Turnaround time varies depending on the complexity and length of the project. For most standard projects, it's typically 3-7 business days from receiving all necessary assets. We'll agree on a clear timeline during our initial consultation.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="faq-question">
+                            <h3>How do you handle revisions?</h3>
+                            <span>+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>My packages typically include a set number of revision rounds (usually 2-3) to ensure you are completely satisfied with the final product. Additional revisions can be accommodated, often at an hourly rate.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="faq-question">
+                            <h3>What software do you use?</h3>
+                            <span>+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>I primarily use industry-standard software like Adobe Premiere Pro for editing and DaVinci Resolve for advanced color grading, ensuring professional results and compatibility.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                        <div class="faq-question">
+                            <h3>How do we get started?</h3>
+                            <span>+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Simply click the "Contact Me" button or send me an email at <a href="mailto:Sakshammrrajsinghh@gmail.com">Sakshammrrajsinghh@gmail.com</a>. We'll schedule a brief chat to discuss your project and see if we're a good fit!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section id="contact" class="cta">
+            <div class="container cta-content" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="gradient-text">Ready to Bring Your Vision to Life?</h2>
+                <p>Let's collaborate on your next project and create something truly exceptional. I'm excited to help you tell your story.</p>
+                <a href="mailto:Sakshammrrajsinghh@gmail.com" class="btn btn-primary">Contact Me Today</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Rraj Singhh Sakshamm. All rights reserved.</p>
+            <p>Designed with passion and pixels.</p>
+        </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-quad',
+            once: true, // Only animate once
+        });
+
+        // FAQ Accordion
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other open FAQ items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current FAQ item
+                    item.classList.toggle('active');
+                });
+            });
+
+            // CRITICAL UX RULE 4 - AOS Fallback check
+            // This script should run AFTER AOS.init()
+            // If AOS elements are stuck (e.g., JS failed or blocked), force opacity to 1
+            setTimeout(() => {
+                const aosElements = document.querySelectorAll('[data-aos]');
+                aosElements.forEach(el => {
+                    if (!el.classList.contains('aos-animate')) {
+                        el.style.opacity = '1';
+                        el.style.transform = 'none';
+                        el.style.transition = 'none';
+                    }
+                });
+            }, 1500); // Give AOS a reasonable time to initialize and animate. If not, force visible.
+        });
+    </script>
+</body>
+</html>
