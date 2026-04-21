@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K.ramya sree | Premium Video Editor & Colorist</title>
+    <meta name="description" content="Portfolio of K.ramya sree, a professional video editor and colorist specializing in high-quality, engaging content for YouTubers and creators.">
+    <meta name="keywords" content="Video Editing, Color Grading, Freelance Video Editor, K.ramya sree, YouTube Editor, Cinematic Editing">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #050505;
+            --surface: #0a0a0a;
+            --accent: #ffffff;
+            --text-main: #ffffff;
+            --text-dim: #a1a1aa;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .nav-link {
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+
+        /* Grain Texture */
+        .grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3FfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 5%;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #ffffff !important; /* Critical UX Rule 2 */
+            font-size: 0.85rem;
+            font-weight: 500;
+            opacity: 1 !important;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--text-dim) !important;
+        }
+
+        /* Layout */
+        section {
+            padding: 120px 10%;
+            position: relative;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at 50% 50%, #111 0%, #050505 100%);
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 7rem);
+            line-height: 0.9;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 0;
+            font-weight: 600;
+            font-family: 'Space Grotesk';
+            font-size: 0.9rem;
+            transition: var(--transition);
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            background: var(--glass);
+            backdrop-filter: blur(5px);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+
+        /* About Section */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 600px;
+            background: var(--surface);
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        .about-text h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        .about-text p {
+            color: var(--text-dim);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        /* Services Grid */
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 50px;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: var(--text-dim);
+        }
+
+        /* Featured Work */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .work-card {
+            border: 1px solid var(--border);
+            padding: 60px;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 350px;
+            background: linear-gradient(45deg, #0a0a0a, #111);
+            transition: var(--transition);
+        }
+
+        .work-card:hover {
+            border-color: var(--accent);
+            background: #111;
+        }
+
+        .work-card .category {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            letter-spacing: 2px;
+        }
+
+        .work-card h3 {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        .view-link {
+            font-family: 'Space Grotesk';
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--accent);
+            width: max-content;
+            padding-bottom: 5px;
+        }
+
+        /* Why Me & Process */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .process-step {
+            padding: 30px;
+            border-left: 1px solid var(--border);
+        }
+
+        .process-step span {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 30px 0;
+        }
+
+        .faq-q {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .faq-a {
+            color: var(--text-dim);
+        }
+
+        /* Testimonial */
+        .testimonial-box {
+            text-align: center;
+            padding: 100px 5%;
+            background: var(--glass);
+            border: 1px solid var(--border);
+        }
+
+        .testimonial-box p {
+            font-size: 2rem;
+            font-family: 'Space Grotesk';
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Footer / CTA */
+        .cta-section {
+            text-align: center;
+            padding: 150px 10%;
+            border-top: 1px solid var(--border);
+        }
+
+        .cta-section h2 {
+            font-size: clamp(2rem, 8vw, 5rem);
+            margin-bottom: 40px;
+        }
+
+        footer {
+            padding: 50px 10%;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+            font-size: 0.8rem;
+        }
+
+        /* Animations */
+        [data-reveal] {
+            opacity: 1; /* Fallback */
+            transform: translateY(0);
+            transition: transform 0.8s ease, opacity 0.8s ease;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            [data-reveal] {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            [data-reveal].visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .about-container, .work-grid, .process-grid { grid-template-columns: 1fr; }
+            section { padding: 80px 5%; }
+            .hero h1 { font-size: 3.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grain"></div>
+
+    <nav>
+        <a href="#" class="logo">K.RS</a>
+        <div class="nav-links">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#work" class="nav-link">Portfolio</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1 data-reveal>Visual Storytelling<br>Elevated.</h1>
+        <p data-reveal>High-end video editing and cinematic color grading for creators who demand perfection.</p>
+        <div class="btn-group" data-reveal>
+            <a href="#work" class="btn btn-primary">View Samples</a>
+            <a href="#contact" class="btn btn-secondary">Message Me</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-image" data-reveal>
+                <img src="https://i.postimg.cc/FKx1SmDT/1000253476.jpg" alt="K.ramya sree - Video Editor">
+            </div>
+            <div class="about-text" data-reveal>
+                <h2>K.ramya sree</h2>
+                <p>I am a full-time freelancer dedicated to the art of post-production. With a focus on dark, premium aesthetics, I transform raw footage into highly engaging, cinematic experiences.</p>
+                <p>My goal is simple: to help content creators and YouTubers stand out in a crowded digital landscape through superior visual quality and seamless narrative flow.</p>
+                <div style="margin-top: 30px;">
+                    <div style="font-weight: 600; margin-bottom: 10px;">EXPERTISE:</div>
+                    <div style="color: var(--text-dim);">Adobe Premiere Pro, DaVinci Resolve, After Effects, Sound Design.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2 class="section-title" data-reveal>Services</h2>
+        <div class="services-grid">
+            <div class="card" data-reveal>
+                <h3>Video Editing</h3>
+                <p>High-retention, engaging edits tailored for YouTube and social media platforms.</p>
+            </div>
+            <div class="card" data-reveal>
+                <h3>Color Grading</h3>
+                <p>Cinematic look-dev and color correction to give your videos a premium, high-budget feel.</p>
+            </div>
+            <div class="card" data-reveal>
+                <h3>Motion Graphics</h3>
+                <p>Clean, modern transitions and typography that complement your brand's aesthetic.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="work">
+        <h2 class="section-title" data-reveal>Featured Work</h2>
+        <div class="work-grid">
+            <a href="https://drive.google.com/drive/folders/13RraqbgYyG3gPwrgcuPOSF-Wc_VkTxlV?usp=sharing" target="_blank" class="work-card" data-reveal>
+                <div>
+                    <span class="category">CONTENT CREATION</span>
+                    <h3>YouTube Portfolio</h3>
+                </div>
+                <div class="view-link">View Projects</div>
+            </a>
+            <a href="https://drive.google.com/drive/folders/13RraqbgYyG3gPwrgcuPOSF-Wc_VkTxlV?usp=sharing" target="_blank" class="work-card" data-reveal>
+                <div>
+                    <span class="category">COLOR GRADING</span>
+                    <h3>Cinematic Showreel</h3>
+                </div>
+                <div class="view-link">View Projects</div>
+            </a>
+            <a href="https://drive.google.com/drive/folders/13RraqbgYyG3gPwrgcuPOSF-Wc_VkTxlV?usp=sharing" target="_blank" class="work-card" data-reveal>
+                <div>
+                    <span class="category">STORYTELLING</span>
+                    <h3>Documentary Style</h3>
+                </div>
+                <div class="view-link">View Projects</div>
+            </a>
+            <a href="https://drive.google.com/drive/folders/13RraqbgYyG3gPwrgcuPOSF-Wc_VkTxlV?usp=sharing" target="_blank" class="work-card" data-reveal>
+                <div>
+                    <span class="category">COMMERCIAL</span>
+                    <h3>Premium Ad Edits</h3>
+                </div>
+                <div class="view-link">View Projects</div>
+            </a>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title" data-reveal>Why Work With Me</h2>
+        <div class="services-grid">
+            <div class="card" data-reveal>
+                <h3>Quality Obsessed</h3>
+                <p>I don't just "cut" videos; I craft them. Every frame is polished for maximum impact.</p>
+            </div>
+            <div class="card" data-reveal>
+                <h3>Targeted Results</h3>
+                <p>Edits designed specifically to increase your audience retention and engagement.</p>
+            </div>
+            <div class="card" data-reveal>
+                <h3>Reliable Workflow</h3>
+                <p>Consistent communication and professional delivery schedules you can depend on.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="process">
+        <h2 class="section-title" data-reveal>The Process</h2>
+        <div class="process-grid">
+            <div class="process-step" data-reveal>
+                <span>01</span>
+                <h3>Strategy</h3>
+                <p>We discuss your vision, target audience, and goals for the video.</p>
+            </div>
+            <div class="process-step" data-reveal>
+                <span>02</span>
+                <h3>Editing</h3>
+                <p>The core narrative is built, focused on flow and engagement.</p>
+            </div>
+            <div class="process-step" data-reveal>
+                <span>03</span>
+                <h3>Refinement</h3>
+                <p>Color grading, sound design, and motion graphics are added.</p>
+            </div>
+            <div class="process-step" data-reveal>
+                <span>04</span>
+                <h3>Delivery</h3>
+                <p>Final high-quality files delivered, ready for your audience.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="testimonial-box" data-reveal>
+            <p>"Amazing video editing! The quality, colors, and transitions were perfect. Highly recommended!"</p>
+            <div style="margin-top: 20px; font-weight: 600;">— Happy Client</div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <h2 class="section-title" data-reveal>FAQ</h2>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="faq-item" data-reveal>
+                <div class="faq-q">What is your typical turnaround time?</div>
+                <div class="faq-a">Depending on the complexity, most projects are delivered within 3-7 business days.</div>
+            </div>
+            <div class="faq-item" data-reveal>
+                <div class="faq-q">Do you handle long-form content?</div>
+                <div class="faq-a">Yes, I specialize in both short-form social content and long-form YouTube documentaries or narratives.</div>
+            </div>
+            <div class="faq-item" data-reveal>
+                <div class="faq-q">Can you match a specific creator's style?</div>
+                <div class="faq-a">Absolutely. I can adapt my editing style to match your existing brand or help you develop a new one.</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="cta-section">
+        <h2 data-reveal>Ready to create something legendary?</h2>
+        <div data-reveal>
+            <a href="mailto:k.d.u.ramyasree@gmail.com" class="btn btn-primary" style="font-size: 1.5rem; padding: 25px 60px;">Message Me</a>
+        </div>
+    </section>
+
+    <footer>
+        <div>&copy; 2024 K.ramya sree. All rights reserved.</div>
+        <div>k.d.u.ramyasree@gmail.com</div>
+    </footer>
+
+    <script>
+        // Reveal on scroll logic
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('[data-reveal]').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // Instant visibility fallback for older browsers or JS failure
+        window.onload = () => {
+            document.querySelectorAll('[data-reveal]').forEach((el) => {
+                el.style.opacity = "1";
+            });
+        };
+    </script>
+</body>
+</html></html>
